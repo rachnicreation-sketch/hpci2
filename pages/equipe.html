@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notre Équipe — HPCI-SARL</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="../style.css">
+<style>
+.team-img-wrapper { width: 100%; aspect-ratio: 4/5; background: var(--off-white); position: relative; overflow: hidden; }
+.team-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(0.165, 0.84, 0.44, 1); }
+.team-card:hover .team-img-wrapper img { transform: scale(1.1); }
+.team-info { padding: 32px 24px; }
+.team-role { font-size: 0.82rem; font-weight: 700; color: var(--red); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+.team-info h3 { font-family:'Outfit',sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--navy); margin-bottom: 8px; }
+.team-info p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+</style>
+</head>
+<body data-root="../">
+
+<section class="page-hero" style="--bg-url: url('../images/hero/qhse.jpg');">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Accueil</a><span>›</span><a href="a-propos.html">Qui sommes-nous</a><span>›</span><span>Notre Équipe</span></div>
+    <h1>Des Experts Engagés</h1>
+    <p>Une équipe pluridisciplinaire unie par une vision commune : l'hygiène et la sécurité au service de l'industrie africaine.</p>
+  </div>
+  <div class="page-hero-accent"></div>
+</section>
+
+  <section style="background:var(--off-white);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;">
+      <span class="section-label">Leadership</span>
+      <h2 class="section-title">Notre Direction Régionale</h2>
+      <p class="section-desc" style="margin:0 auto;">Un encadrement expérimenté pour garantir la qualité de chaque intervention sur tout le continent.</p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card anim">
+        <div class="team-img-wrapper">
+          <img src="../images/equipe/dh-hpci.jpeg" alt="Directeur Général">
+        </div>
+        <div class="team-info">
+          <div class="team-role">Direction Générale</div>
+          <h3>Directeur Général</h3>
+          <p>Expert en stratégie industrielle et pionnier de l'assainissement moderne en Afrique subsaharienne.</p>
+          <div class="team-social">
+            <a href="https://www.linkedin.com/company/hpci-abidjansarl/" target="_blank">LinkedIn Profile →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card anim">
+        <div class="team-img-wrapper">
+          <img src="../images/equipe/user.jpg" alt="Responsable Opérations">
+        </div>
+        <div class="team-info">
+          <div class="team-role">Opérations & Logistique</div>
+          <h3>Responsable des Opérations</h3>
+          <p>Supervise l'ensemble des déploiements techniques et garantit la réactivité de nos équipes 24h/24.</p>
+          <div class="team-social">
+            <a href="#">LinkedIn Profile →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card anim">
+        <div class="team-img-wrapper">
+          <img src="../images/equipe/user.jpg" alt="Responsable QHSE">
+        </div>
+        <div class="team-info">
+          <div class="team-role">Qualité & Sécurité</div>
+          <h3>Responsable QHSE</h3>
+          <p>Garantit la conformité de chaque processus aux normes internationales de sécurité et d'environnement.</p>
+          <div class="team-social">
+            <a href="#">LinkedIn Profile →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 80px; text-align: center; background: white; padding: 60px; border-radius: 20px; box-shadow: 0 10px 40px rgba(10,22,40,0.05);">
+        <h3 class="section-title">Rejoignez l'Aventure HPCI</h3>
+        <p class="section-desc" style="margin: 20px auto;">Vous êtes expert en hygiène industrielle ou technicien qualifié ? <br>Découvrez nos opportunités de carrière.</p>
+        <a href="contact.html" class="btn-primary">Postuler maintenant →</a>
+    </div>
+  </div>
+</section>
+
+<script src="../components.js"></script>
+<script>
+  injectNav('equipe');
+  injectFooter();
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
+
+
+

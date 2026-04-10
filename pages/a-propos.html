@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos de nous — HPCI-SARL</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="../style.css">
+<style>
+.about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.about-main-img {
+  width: 100%; aspect-ratio: 16/10; border-radius: 2px; overflow: hidden; margin-bottom: 16px;
+  /* IMAGE PRINCIPALE À PROPOS
+     Remplacer par : background: url('../images/hero/a-propos-equipe.jpg') center/cover no-repeat;
+     Taille recommandée : 1200x750px */
+  background: linear-gradient(135deg, var(--charcoal), var(--navy));
+  display: flex; align-items: center; justify-content: center; font-size: 4rem;
+}
+.about-img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.about-img-sm {
+  aspect-ratio: 4/3; border-radius: 2px; overflow: hidden;
+  display: flex; align-items: center; justify-content: center; font-size: 2rem;
+}
+.values-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 40px; }
+.value-item { padding: 24px; background: var(--off-white); border-radius: 2px; border-left: 3px solid var(--red); }
+.value-item h4 { font-family:'Outfit',sans-serif; font-weight:700; font-size:1rem; color:var(--navy); margin-bottom:6px; }
+.value-item p { font-size:0.85rem; color:var(--muted); line-height:1.6; }
+.highlights { list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+.highlights li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.92rem; color: var(--text); line-height: 1.5; }
+.highlights li::before { content:'\2713'; display:flex; align-items:center; justify-content:center; width:20px; height:20px; background:var(--red); color:white; border-radius:50%; font-size:0.68rem; font-weight:700; flex-shrink:0; margin-top:2px; }
+.timeline { margin-top: 48px; }
+.timeline-item { display: flex; gap: 24px; margin-bottom: 28px; }
+.timeline-year { font-family:'Outfit',sans-serif; font-weight:800; font-size:1.2rem; color:var(--red); min-width:56px; }
+.timeline-content h4 { font-weight:600; color:var(--navy); margin-bottom:4px; font-size:0.95rem; }
+.timeline-content p { font-size:0.87rem; color:var(--muted); line-height:1.6; }
+@media(max-width:1024px){ .about-content{grid-template-columns:1fr;} .values-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body data-root="../">
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="../index.html">Accueil</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>À propos de nous</span>
+    </div>
+    <h1>À Propos de HPCI-SARL</h1>
+    <p>Découvrez l'histoire, la mission et les valeurs qui font d'HPCI-SARL le leader du nettoyage industriel en Afrique centrale et de l'Ouest.</p>
+  </div>
+  <div class="page-hero-accent"></div>
+</section>
+
+<section style="background:var(--white);">
+  <div class="container">
+    <div class="about-content">
+      <div>
+        <div class="about-main-img">🏢</div>
+        <div class="about-img-grid">
+          <div class="about-img-sm" style="background:linear-gradient(135deg,#1D2B3A,#0F1F2E);">🏭</div>
+          <div class="about-img-sm" style="background:linear-gradient(135deg,#2d8b57,#0a2e1a);">⚙️</div>
+        </div>
+      </div>
+      <div>
+        <span class="section-eyebrow">Notre histoire</span>
+        <h2 class="section-title">Hygiène Prodige Com International</h2>
+    
+  </div>
+</section>
+
+<script src="../components.js"></script>
+<script> injectNav('apropos'); injectFooter(); </script>
+</body>
+</html>
