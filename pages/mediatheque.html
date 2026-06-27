@@ -1,12 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Médiathèque — HPCI-SARL</title>
+  <title>Médiathèque - HPCI-SARL</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css">
   <style>
     .filter-bar {
       display: flex;
@@ -25,16 +25,16 @@
       font-weight: 600;
       cursor: pointer;
       transition: all .3s;
-      font-family:'Outfit',sans-serif;
+      font-family: 'Outfit', sans-serif;
     }
 
     .filter-btn.active,
     .filter-btn:hover {
       background: var(--red);
-      color: var(--navy);
+      color: var(--white);
       border-color: var(--red);
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
+      box-shadow: 0 4px 15px rgba(227, 6, 19, 0.2);
     }
 
     .media-grid {
@@ -82,9 +82,35 @@
       align-items: center;
       justify-content: center;
       color: var(--navy);
-      font-size: 1rem;
+      font-size: 0.95rem;
       z-index: 2;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .play-btn-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: rgba(227, 6, 19, 0.95); /* HPCI Red */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.4rem;
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      z-index: 3;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    .media-item:hover .play-btn-overlay {
+      background: white;
+      color: var(--red);
+      transform: translate(-50%, -50%) scale(1.15);
+      box-shadow: 0 10px 30px rgba(227, 6, 19, 0.3);
     }
 
     .media-overlay {
@@ -107,12 +133,12 @@
       color: white;
       font-weight: 700;
       font-size: 0.9rem;
-      font-family:'Outfit',sans-serif;
+      font-family: 'Outfit', sans-serif;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
-    /* ── MODAL ── */
+    /* -- MODAL -- */
     #mediaModal {
       position: fixed;
       inset: 0;
@@ -161,17 +187,15 @@
 
   <section class="page-hero" style="--bg-url: url('../images/gallery/gal-5.jpg');">
     <div class="page-hero-bg"></div>
-<div class="page-hero-bg"></div>
-<div class="page-hero-bg"></div>
     <div class="page-hero-inner">
-      <div class="breadcrumb"><a href="../index.html">Accueil</a><span>›</span><span>Médiathèque</span></div>
+      <div class="breadcrumb"><a href="../index.php">Accueil</a><span>></span><span>Médiathèque</span></div>
       <h1>Médiathèque</h1>
-      <p>Plongez au cœur de notre expertise QHSE à travers nos ressources visuelles.</p>
+      <p>Plongez au coeur de notre expertise QHSE à travers nos ressources visuelles.</p>
     </div>
-  <div class="page-hero-accent"></div>
-</section>
+    <div class="page-hero-accent"></div>
+  </section>
 
-  <section style="background:var(--white);">
+  <section style="background:var(--white); padding: 80px 0 100px;">
     <div class="container">
       <div class="filter-bar anim">
         <button class="filter-btn active" onclick="filterMedia('all', this)">Tout</button>
@@ -182,7 +206,8 @@
       <div class="media-grid" id="mediaGrid">
         <!-- Videos -->
         <div class="media-item anim" data-cat="video" onclick="openMedia('video', '../videos/gallery/gallery-1.mp4')">
-          <div class="media-type-icon">▶</div>
+          <div class="media-type-icon"><i class="fa-solid fa-video"></i></div>
+          <div class="play-btn-overlay"><i class="fa-solid fa-play" style="margin-left: 4px;"></i></div>
           <img src="../images/gallery/gal-1.jpg" alt="Vidéo Opération 1">
           <div class="media-overlay">
             <div class="media-title">Intervention Spécialisée</div>
@@ -190,7 +215,8 @@
         </div>
 
         <div class="media-item anim" data-cat="video" onclick="openMedia('video', '../videos/gallery/gallery-2.mp4')">
-          <div class="media-type-icon">▶</div>
+          <div class="media-type-icon"><i class="fa-solid fa-video"></i></div>
+          <div class="play-btn-overlay"><i class="fa-solid fa-play" style="margin-left: 4px;"></i></div>
           <img src="../images/gallery/gal-2.jpg" alt="Vidéo Opération 2">
           <div class="media-overlay">
             <div class="media-title">Nettoyage Haute Pression</div>
@@ -198,7 +224,8 @@
         </div>
 
         <div class="media-item anim" data-cat="video" onclick="openMedia('video', '../videos/gallery/gallery-3.mov')">
-          <div class="media-type-icon">▶</div>
+          <div class="media-type-icon"><i class="fa-solid fa-video"></i></div>
+          <div class="play-btn-overlay"><i class="fa-solid fa-play" style="margin-left: 4px;"></i></div>
           <img src="../images/gallery/gal-3.jpg" alt="Vidéo Opération 3">
           <div class="media-overlay">
             <div class="media-title">Maintenance de Séparateur</div>
@@ -206,16 +233,17 @@
         </div>
 
         <div class="media-item anim" data-cat="video" onclick="openMedia('video', '../videos/gallery/gallery-4.mp4')">
-          <div class="media-type-icon">▶</div>
+          <div class="media-type-icon"><i class="fa-solid fa-video"></i></div>
+          <div class="play-btn-overlay"><i class="fa-solid fa-play" style="margin-left: 4px;"></i></div>
           <img src="../images/gallery/gal-4.jpg" alt="Vidéo Opération 4">
           <div class="media-overlay">
-            <div class="media-title">Coordination Équipe HSE</div>
+            <div class="media-title">Coordination équipe HSE</div>
           </div>
         </div>
 
         <!-- Photos -->
         <div class="media-item anim" data-cat="photo" onclick="openMedia('photo', '../images/gallery/gal-5.jpg')">
-          <div class="media-type-icon">📷</div>
+          <div class="media-type-icon"><i class="fa-solid fa-camera"></i></div>
           <img src="../images/gallery/gal-5.jpg" alt="Siège HPCI">
           <div class="media-overlay">
             <div class="media-title">Siège HPCI - Pointe-Noire</div>
@@ -223,7 +251,7 @@
         </div>
 
         <div class="media-item anim" data-cat="photo" onclick="openMedia('photo', '../images/gallery/gal-6.jpg')">
-          <div class="media-type-icon">📷</div>
+          <div class="media-type-icon"><i class="fa-solid fa-camera"></i></div>
           <img src="../images/gallery/gal-6.jpg" alt="Équipe Terrain">
           <div class="media-overlay">
             <div class="media-title">Opérations de Surface</div>
@@ -231,7 +259,7 @@
         </div>
 
         <div class="media-item anim" data-cat="photo" onclick="openMedia('photo', '../images/gallery/gal-7.jpg')">
-          <div class="media-type-icon">📷</div>
+          <div class="media-type-icon"><i class="fa-solid fa-camera"></i></div>
           <img src="../images/gallery/gal-7.jpg" alt="Gestion Déchets">
           <div class="media-overlay">
             <div class="media-title">Gestion des Déchets</div>
@@ -239,7 +267,7 @@
         </div>
 
         <div class="media-item anim" data-cat="photo" onclick="openMedia('photo', '../images/gallery/gal-8.jpg')">
-          <div class="media-type-icon">📷</div>
+          <div class="media-type-icon"><i class="fa-solid fa-camera"></i></div>
           <img src="../images/gallery/gal-8.jpg" alt="Audit Technique">
           <div class="media-overlay">
             <div class="media-title">Audit Technique</div>
@@ -288,18 +316,19 @@
       }
 
       modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
     }
 
     function closeMedia() {
       const modal = document.getElementById('mediaModal');
       const body = document.getElementById('modalBody');
-      body.innerHTML = '';
+      const video = body.querySelector('video');
+      if (video) {
+        video.pause();
+      }
       modal.style.display = 'none';
-      document.body.style.overflow = 'auto';
+      body.innerHTML = '';
     }
 
-    // Animation Init
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.1 });
@@ -308,6 +337,3 @@
 </body>
 
 </html>
-
-
-

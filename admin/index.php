@@ -69,7 +69,7 @@ $count_media = $pdo->query("SELECT COUNT(*) FROM media")->fetchColumn();
 </head>
 <body>
   <div class="sidebar">
-    <div style="margin-bottom: 40px;"><img src="../images/logo/LOGO-PNR.jpeg" alt="Logo" style="height: 48px;"></div>
+    <div style="margin-bottom: 40px;"><img src="../images/logo/logo_hpci.png" alt="Logo" style="height: 48px;"></div>
     <h2>Administration CMS</h2>
     <a href="index.php" class="active">Tableau de Bord</a>
     <a href="news.php">Actualités</a>
@@ -125,7 +125,7 @@ $count_media = $pdo->query("SELECT COUNT(*) FROM media")->fetchColumn();
       <div style="display: flex; gap: 16px;">
         <a href="news_add.php" class="btn-primary" style="text-decoration: none;">Publier une Actualité</a>
         <a href="jobs_add.php" class="btn-primary" style="background: #0a1628; text-decoration: none;">Publier une Offre</a>
-        <a href="../index.html" target="_blank" class="btn-outline" style="color: #0a1628; border-color: #e2e8f0;">Visualiser le site</a>
+        <a href="../index.php" target="_blank" class="btn-outline" style="color: #0a1628; border-color: #e2e8f0;">Visualiser le site</a>
       </div>
     </div>
   </div>

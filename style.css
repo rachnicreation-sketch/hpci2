@@ -1140,10 +1140,12 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.12); }
 .page-hero-bg {
   position: absolute;
   inset: 0;
+  background-image: var(--bg-url);
   background-size: cover;
   background-position: center;
   opacity: 0.18;
 }
+
 .page-hero-inner { position: relative; max-width: 1280px; margin: 0 auto; padding: 0 48px; }
 .breadcrumb {
   display: flex;

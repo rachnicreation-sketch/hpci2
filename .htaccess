@@ -1,0 +1,49 @@
+# ============================================================
+# HPCI-SARL — Configuration Apache 2.4 (Production/WAMP)
+# ============================================================
+
+DirectoryIndex index.php index.html
+
+Options -Indexes
+
+
+# --- Sécurité : bloquer l'accès direct aux fichiers sensibles ---
+# Syntaxe Apache 2.4 (Require all denied)
+<FilesMatch "\.(sql|log|env|ps1|md)$">
+    Require all denied
+</FilesMatch>
+
+# --- Bloquer l'accès au dossier .git et scripts sensibles ---
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^\.git(/.*)?$ - [F,L]
+    RewriteRule ^scripts/database\.sql$ - [F,L]
+</IfModule>
+
+# --- En-têtes de sécurité HTTP ---
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# --- Cache navigateur pour les assets statiques ---
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png  "access plus 1 month"
+    ExpiresByType image/gif  "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType text/css   "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType font/woff2 "access plus 1 month"
+</IfModule>
+
+# --- Compression Gzip ---
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript text/xml
+</IfModule>
+
+# --- Encodage UTF-8 par défaut ---
+AddDefaultCharset UTF-8

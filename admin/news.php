@@ -50,7 +50,7 @@ $news_list = $stmt->fetchAll();
 </head>
 <body>
   <div class="sidebar">
-    <div style="margin-bottom: 40px;"><img src="../images/logo/LOGO-PNR.jpeg" alt="Logo" style="height: 48px;"></div>
+    <div style="margin-bottom: 40px;"><img src="../images/logo/logo_hpci.png" alt="Logo" style="height: 48px;"></div>
     <h2>Administration CMS</h2>
     <a href="index.php">Tableau de Bord</a>
     <a href="news.php" class="active">Actualités</a>

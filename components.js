@@ -38,7 +38,7 @@ function injectNav(activePage) {
   const root = document.body.dataset.root || './';
 
   const p = {
-    accueil:        root + 'index.html',
+    accueil:        root + 'index.php',
     apropos:        root + 'pages/a-propos.html',
     engagements:    root + 'pages/engagements.html',
     equipe:         root + 'pages/equipe.html',
@@ -52,7 +52,7 @@ function injectNav(activePage) {
     hse:            root + 'pages/service-hse.html',
     engineering:    root + 'pages/service-engineering.html',
     mediatheque:    root + 'pages/mediatheque.html',
-    actualite:      root + 'pages/actualite.html',
+    actualite:      root + 'pages/actualite.php',
     partenaires:    root + 'pages/partenaires.html',
     contact:        root + 'pages/contact.html',
   };
@@ -66,7 +66,7 @@ function injectNav(activePage) {
     <nav id="mainNav">
       <div class="nav-inner">
         <a href="${p.accueil}" class="logo">
-          <img src="${root}images/logo/LOGO-PNR.jpeg" alt="HPCI-SARL" style="height:48px;">
+          <img src="${root}images/logo/logo_hpci.png" alt="HPCI-SARL" style="height:48px;">
         </a>
 
         <ul class="nav-links" id="navLinks">
@@ -134,8 +134,8 @@ function injectFooter() {
       <div class="footer-grid">
 
         <div class="footer-brand">
-          <a href="${root}index.html" class="footer-logo">
-            <img src="${root}images/logo/LOGO-PNR.jpeg" alt="HPCI-SARL" style="height:44px; border-radius:2px;">
+          <a href="${root}index.php" class="footer-logo">
+            <img src="${root}images/logo/logo_hpci.png" alt="HPCI-SARL" style="height:44px; border-radius:2px;">
           </a>
           <p>Hygiène Prodige Com International — Spécialiste du nettoyage industriel, de la maintenance et de l'assainissement en Afrique centrale et de l'Ouest.</p>
           <div class="footer-social">

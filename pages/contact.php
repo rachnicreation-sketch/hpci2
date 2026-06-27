@@ -84,7 +84,7 @@ function h($value) {
 
 <nav>
   <div class="nav-inner">
-    <a href="../index.php" class="logo"><img src="../images/logo/LOGO-PNR.jpeg" alt="Logo" style="height:48px;"></a>
+    <a href="../index.php" class="logo"><img src="../images/logo/logo_hpci.png" alt="Logo" style="height:48px;"></a>
     <ul class="nav-links">
       <li><a href="../index.php">Accueil</a></li>
       <li><a href="services.php">Services</a></li>

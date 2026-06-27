@@ -22,7 +22,7 @@ $msg = $stmt->fetchColumn();
 </head>
 <body>
   <div class="maint-container">
-    <div class="maint-logo"><img src="images/logo/LOGO-PNR.jpeg" alt="Logo" style="height: 80px;"></div>
+    <div class="maint-logo"><img src="images/logo/logo_hpci.png" alt="Logo" style="height: 80px;"></div>
     <h1>Maintenance du Site</h1>
     <p><?php echo htmlspecialchars($msg); ?></p>
     <div class="maint-bar"></div>

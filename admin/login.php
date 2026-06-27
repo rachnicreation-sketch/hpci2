@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
   <div class="login-card">
     <div class="login-logo">
-      <img src="../images/logo/LOGO-PNR.jpeg" alt="HPCI-SARL" style="height: 60px;">
+      <img src="../images/logo/logo_hpci.png" alt="HPCI-SARL" style="height: 60px;">
     </div>
     <h1>Espace Administration</h1>
     <?php if ($error): ?>
@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
       <button type="submit" class="login-btn">Se connecter</button>
     </form>
-    <p style="margin-top: 32px; font-size: 0.75rem; color: #94a3b8;"><a href="../index.html" style="color: #64748b; text-decoration: none;">← Retour au site</a></p>
+    <p style="margin-top: 32px; font-size: 0.75rem; color: #94a3b8;"><a href="../index.php" style="color: #64748b; text-decoration: none;">← Retour au site</a></p>
   </div>
 </body>
 </html>
