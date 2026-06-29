@@ -1133,17 +1133,26 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.12); }
 /* ── PAGE HERO (pages internes) ── */
 .page-hero {
   background: var(--navy);
-  padding: 80px 0 60px;
+  padding: 100px 0 80px; /* Increased padding for a better hero feel */
   position: relative;
   overflow: hidden;
 }
+
 .page-hero-bg {
   position: absolute;
   inset: 0;
   background-image: var(--bg-url);
   background-size: cover;
   background-position: center;
-  opacity: 0.18;
+  opacity: 1; /* Full opacity so the image is clearly visible */
+}
+
+/* Gradient overlay to ensure text readability over the background image */
+.page-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.4) 100%);
 }
 
 .page-hero-inner { position: relative; max-width: 1280px; margin: 0 auto; padding: 0 48px; }
